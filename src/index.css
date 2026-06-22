@@ -52,6 +52,7 @@
 
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 #root {
@@ -82,6 +83,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,6 +93,7 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -108,4 +111,45 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+nav {
+  background: #222;
+  color: white;
+  padding: 1rem;
+}
+
+nav h2 {
+  color: white
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+div {
+  padding: 20px;
+}
+
+main {
+  min-height: 80vh;
+  padding: 20px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
