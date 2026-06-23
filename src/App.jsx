@@ -1,42 +1,33 @@
-// template imports
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from './assets/vite.svg';
-import heroImg from './assets/hero.png';
-import './App.css';
+import { BrowserRouter, Router, Route } from "react-router-dom";
 
-// my Imports
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import heroImg from './assets/hero.png'
+import './App.css'
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/menu" element={<h1>Menu</h1>} />
-        <Route path="/cart" element={<h1>Cart</h1>} />
-        <Route path="/checkout" element={<h1>Checkout</h1>} />
-        <Route path="/status" element={<h1>Order Status</h1>} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+import Navbar from './components/navbar';
+
+import Home from "./pages/home";
+import Menu from './pages/menu';
+import Cart from "./pages/cart";
+import Checkout from './pages/checkout';
+import Status from './pages/status';
 
 function App() {
-  return (
-    <>
-      <Navbar />
+    return (
+        <BrowserRouter>
+            <Navbar />
 
-      <main>
-        <h1>Welcome to FoodForge</h1>
-        <p>Order your favourite meals online.</p>
-      </main>
-
-      <Footer />
-    </>
-  );
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/status" element={<Status />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
