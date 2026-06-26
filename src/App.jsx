@@ -6,25 +6,27 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-import Navbar from './components/navbar';
+import NavBar from './components/navBar';
 
-import Home from "./pages/home";
-import Menu from './pages/menu';
-import Cart from "./pages/cart";
-import Checkout from './pages/checkout';
-import Status from './pages/status';
+import HomePage from "./pages/homePage";
+import MenuPage from './pages/menuPage';
+import CartPage from "./pages/cartPage";
+import CheckoutPage from './pages/checkoutPage';
+import StatusPage from './pages/statusPage';
+
+import { CartProvider } from './context/CartContext';
 
 function App() {
     return (
         <BrowserRouter>
-            <Navbar />
+            <NavBar />
 
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/status" element={<Status />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/menu" element={<MenuPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/checkout" element={<CheckoutPage />} />
+                <Route path="/status" element={<StatusPage />} />
             </Routes>
         </BrowserRouter>
     );
