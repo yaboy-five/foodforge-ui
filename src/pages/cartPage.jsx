@@ -14,7 +14,7 @@ function CartPage() {
 
     const [cart, setCart] = useState(null);
     const [message, setMessage] = useState("");
-    const { cart, removeFromCart, clearCart } = useCart();
+    const { removeFromCart, clearCart } = useCart();
 
     const loadCart = async () => {
         const data = await viewCart();
