@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/menu"; // reuse menu for featured items
+const API_URL = process.env.API_URL; 
 
 // top 3 items
 export const getFeaturedItems = async () => {

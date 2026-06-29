@@ -1,8 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/checkout";
-
-const baseURL = process.env.BASE_URL || process.env.REACT_APP_BASE_URL; 
+const API_URL = process.env.API_URL; 
 
 // Review current order
 export const reviewOrder = async () => {
