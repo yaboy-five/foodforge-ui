@@ -28,6 +28,8 @@ const { cart } = useCart()
                     </link>
                 </li>
             </ul>
+            <span>Welcome, {user?.username}</span>
+            <button onClick={logout}>Logout</button>
         </nav>
     );
 }
