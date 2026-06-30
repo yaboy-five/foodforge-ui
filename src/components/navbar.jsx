@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext"
 
 function Navbar() {
     return (
@@ -22,6 +23,8 @@ function Navbar() {
                     <link to="/cart">Cart</link>
                 </li>
             </ul>
+            <span>Welcome, {user?.username}</span>
+            <button onClick={logout}>Logout</button>
         </nav>
     );
 }

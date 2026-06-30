@@ -8,11 +8,16 @@ import './App.css'
 
 import Navbar from './components/navbar';
 
-import Home from "./pages/home";
-import Menu from './pages/menu';
-import Cart from "./pages/cart";
-import Checkout from './pages/checkout';
-import Status from './pages/status';
+import LoginPage from "./pages/loginPage";
+import RegisterPage from "./pages/registerPage";
+import HomePage from "./pages/homePage";
+import MenuPage from './pages/menuPage';
+import CartPage from "./pages/cartPage";
+import CheckoutPage from './pages/checkoutPage';
+import StatusPage from './pages/statusPage';
+
+import { CartProvider } from './context/CartContext';
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
     return (
@@ -20,11 +25,55 @@ function App() {
             <Navbar />
 
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/status" element={<Status />} />
+
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+
+                <Route 
+                    path="/" 
+                    element={
+                        <ProtectedRoute>
+                            <HomePage />
+                        </ProtectedRoute>
+                    } 
+                />
+
+                <Route 
+                    path="/menu" 
+                    element={
+                        <ProtectedRoute>
+                            <MenuPage />
+                        </ProtectedRoute>
+                    } 
+                />
+
+                <Route 
+                    path="/cart" 
+                    element={
+                        <ProtectedRoute>
+                            <CartPage />
+                        </ProtectedRoute>
+                    } 
+                />
+
+                <Route 
+                    path="/checkout" 
+                    element={
+                        <ProtectedRoute>
+                            <CheckoutPage />
+                        </ProtectedRoute>
+                    } 
+                />
+
+                <Route 
+                    path="/status" 
+                    element={
+                        <ProtectedRoute>
+                            <StatusPage />
+                        </ProtectedRoute>
+                    } 
+                />
+
             </Routes>
         </BrowserRouter>
     );
