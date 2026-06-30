@@ -6,7 +6,7 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
-import Navbar from './components/navbar';
+import NavBar from './components/navBar';
 
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
@@ -22,7 +22,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
     return (
         <BrowserRouter>
-            <Navbar />
+            <NavBar />
 
             <Routes>
 

@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext"
 
 function Navbar() {
+
+const { cart } = useCart()
+
     return (
         <nav>
             <h2>FoodForge</h2>
@@ -20,7 +23,9 @@ function Navbar() {
                     <link to="/checkout">Checkout</link>
                 </li>
                 <li>
-                    <link to="/cart">Cart</link>
+                    <link to="/cart">
+                        Cart ({cart.items.length})
+                    </link>
                 </li>
             </ul>
             <span>Welcome, {user?.username}</span>
