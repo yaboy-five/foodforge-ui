@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = process.env.API_URL; ;
+const API_URL = process.env.API_URL;
 
 export const viewCart = async () => {
     const res = await axios.get(`${API_URL}`);
